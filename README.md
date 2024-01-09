@@ -1,4 +1,9 @@
-My k8s notes
+# My k8s notes
 
 
-[Namespaces](Resources/namespaces.md)
+Resources:
+- CKA course on Udemy by Mumshad
+---
+
+Links:
+- [Namespaces](Resources/namespaces.md)
