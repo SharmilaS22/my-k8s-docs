@@ -60,3 +60,11 @@ For a key exists;
 During execution, if the node label changes, based on the affinity types the pods are ignored or stopped.
 
 ---
+For a dedicated node for specific type of pods,
+Use both taints&tolerations and Node Affinity
+
+Taint the nodes & tolerate the specific pods -> so other type of pods are restricted from node
+
+Give affinity to the pods to match the specific node -> so the pods will always find its appropriate node
+
+---
