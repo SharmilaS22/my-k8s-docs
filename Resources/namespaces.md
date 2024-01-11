@@ -50,6 +50,8 @@ kubectl config set-context $(kubectl config current-context) --namespace <namesp
 To get any resources in all namespaces:
 ```
 kubectl get pods --all-namespaces
+or
+kubectl get pods -A
 ```
 To assign a resource quota for a namespace:
 ```

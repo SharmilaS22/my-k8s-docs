@@ -21,3 +21,6 @@ Docs:
 - [Resource Limits](Scheduling/resourceLimits.md)
 - [Daemon Set](Scheduling/DaemonSets.md)
 - [Static pod](Scheduling/staticPods.md)
+- [multipleSchedulers]()
+
+### [Monitoring](Logging/MonitorClusterComp.md) and [Logging](Logging/ManageAppLogs.md)
