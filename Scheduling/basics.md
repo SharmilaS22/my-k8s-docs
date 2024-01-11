@@ -18,6 +18,12 @@ Selectors -> to filter pods with certain labels
 
 ```
 kubectl get pods --selector app=redis
+or
+kubectl get pods -l app=redis
+```
+To select multiple labels (AND logical)
+```
+kubectl get pods -l app=redis,env=dev
 ```
 
 **Annotations:**

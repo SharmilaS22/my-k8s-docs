@@ -3,6 +3,8 @@
 to create an nginx pod
 
 ```
+kubectl run <pod-name> --image=<image-name>
+
 kubectl run nginx --image=nginx
 ```
 
