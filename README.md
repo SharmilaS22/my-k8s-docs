@@ -7,3 +7,5 @@ Resources:
 
 Links:
 - [Namespaces](Resources/namespaces.md)
+- [Imperative commands](Resources/imperative-cmds.md)
+- [Scheduling Basics](Scheduling/basics.md)
