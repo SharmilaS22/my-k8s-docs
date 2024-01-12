@@ -24,3 +24,7 @@ Docs:
 - [multipleSchedulers]()
 
 ### [Monitoring](Logging/MonitorClusterComp.md) and [Logging](Logging/ManageAppLogs.md)
+
+### App Lifecycle Management
+- [Arguments and Commands](AppLifecycle/arguments.md)
+- [Rolling updates](AppLifecycle/Rollingupdates.md)
