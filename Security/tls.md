@@ -195,3 +195,31 @@ k get csr/<user-name> -o yaml
 
 k get csr/<user-name> -o jsonpath='{.status.certificate}' | base64 -d > user.crt
 ```
+ 
+kube config: (default path: .kube/config)
+
+clusters:
+- cluster info contains:
+  - server name
+  - client authority (file path) or client authorirty data (base64 encoded cert value)
+
+users:
+- user info contains
+  - client-certificate-data or client-certificate (file path)
+  - client-key-data or client-key (file path)
+
+contexts:
+- context info contains
+  - user name
+  - cluster name
+  - namespace (optional)
+
+current-context: context_name
+
+```
+kubectl config use-context <context-name>
+
+# with custom file
+kubectl config --kubeconfig=my-kube-config use-context <context-name>
+
+```
