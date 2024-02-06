@@ -34,7 +34,7 @@ To give a container port, use `--port=<port number>`
 to get deployment.yaml for nginx w/0 creating the deployment
 
 ```
-kubectl create deployment nginx --image=nginx --dry-client -o yaml
+kubectl create deployment nginx --image=nginx --dry-run=client -o yaml
 ```
 
 to create nginx deployment

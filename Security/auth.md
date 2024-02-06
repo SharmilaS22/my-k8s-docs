@@ -30,4 +30,74 @@ Auth mechanisms:
     -> token-auth-file
     -> `curl ... --header "Authorization: Bearer <token>"`
 
+## Role based access control - RBAC
+
+Role and RoleBindings are namespace based
+
+Role
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata: 
+    name: developer
+rules:
+  - apiGroups: [""] //"" for core
+    resources: ["pods"]
+    verbs: ["list", "get", "create", "update"]
+  - apiGroups: [""] //"" for core
+    resources: ["services"]
+    verbs: ["list", "get", "create"]
+    resourceNames: ["node-service", "my-svc"] //only the svc's with these name are allowed to be accessed
+```
+
+Role Binding
+
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+    name: my-role-binding
+    namespace: my-namespace //if not specified - default
+subjects:
+  - kind: User
+    name: my-user
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+    kind: Role
+    name: developer
+    apiGroup: rbac.authorization.k8s.io
+```
+
+kubectl get roles
+kubectl get rolebindings
+kubectl describe role <role>
+kubectl describe rolebinding <rolebinding>
+
+
+To check whether you have permission on specific verb and resource
+
+```
+kubectl auth can-i <verb> <resource>
+
+kubectl auth can-i create deployments
+> yes
+
+//to check for a specific user
+kubectl auth can-i <verb> <resource> --as <user> --namespace <namespace>
+kubectl auth can-i delete pods --as my-user
+> no
+
+kubectl auth can-i <verb> <resource> --as <user> --namespace <namespace>
+```
+
+## Namespace scoped:
+- pods, rs, jobs, deployments, svc, secrets, roles, rolebindings, configmaps, pvc
+## Cluster scoped:
+- nodes, persistent volns, clusterroles, cluster role bindings, certificate signing requests, namespaces
+
+To view more , use filter --namespaced=true/false in `kubectl api-resources --namespaced=true` or `kubectl api-resources --namespaced=false`
+
+
+To create a non namespace role and role binding (not restricted to a namespace):
+use cluster role and cluter role binding, with same syntax.
 
