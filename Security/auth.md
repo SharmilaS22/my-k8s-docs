@@ -35,7 +35,7 @@ Auth mechanisms:
 Role and RoleBindings are namespace based
 
 Role
-```
+```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata: 
@@ -52,7 +52,7 @@ rules:
 
 Role Binding
 
-```
+```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
@@ -76,7 +76,7 @@ kubectl describe rolebinding <rolebinding>
 
 To check whether you have permission on specific verb and resource
 
-```
+```sh
 kubectl auth can-i <verb> <resource>
 
 kubectl auth can-i create deployments

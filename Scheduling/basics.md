@@ -1,7 +1,7 @@
 ## Manual scheduling
 
 The property nodeName could be used to assign a node to a pod manually.
-```
+```yaml
 spec:
     nodeName: <node-name>
 ```
@@ -16,13 +16,13 @@ If the pod is not scheduled on a node yet - the status of the pod would be 'Pend
 
 Selectors -> to filter pods with certain labels
 
-```
+```sh
 kubectl get pods --selector app=redis
 or
 kubectl get pods -l app=redis
 ```
 To select multiple labels (AND logical)
-```
+```sh
 kubectl get pods -l app=redis,env=dev
 ```
 

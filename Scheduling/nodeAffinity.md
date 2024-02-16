@@ -1,7 +1,7 @@
 
 ## Node Selectors
 in the pod.yaml,
-```
+```yaml
 Spec:
     ...
     NodeSelector:
@@ -22,7 +22,7 @@ Limitations:
 Complex logic can be implemented using node affinity
 
 in pod.yaml
-```
+```yaml
 spec:
     affinity:
         nodeAffinity:
@@ -36,7 +36,7 @@ spec:
                          - Small
 ```
 For not operator
-```
+```yaml
   - matchExpressions:
     - key: size
     operator: NotIn
@@ -44,7 +44,7 @@ For not operator
     - small
 ```
 For a key exists;
-```
+```yaml
   - matchExpressions:
     - key: size
     operator: Exists

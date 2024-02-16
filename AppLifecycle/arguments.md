@@ -24,7 +24,7 @@ CMD ["5"]    ## default value
 `docker run ubuntu-sleep 10` -> sleeps for 10 sec
 
 in pod.yaml, override the default value of command (argument for entrypoint)
-```
+```yaml
 containers:
   - image: ubuntu-sleep
     name: ubuntu-sleep
@@ -35,7 +35,7 @@ To override ENTRYPOINT command
 `docker run --entrypoint <cmd> ubuntu-sleep <arg>`
 
 in pod.yaml
-```
+```yaml
 containers:
   - image: ubuntu-sleep
     name: ubuntu-sleep
@@ -52,7 +52,7 @@ Environment variables in docker,
 docker run -e APP_COLOR=red webapp
 ```
 In pod.yaml,
-```
+```yaml
 containers:
 - name: webapp
   ...
@@ -75,7 +75,7 @@ kubectl create cm app-config --from-literal=APP_COLOR=blue
 ```
 
 ConfigMap.yaml
-```
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -97,7 +97,7 @@ kubectl describe configmaps
 ```
 
 Use config map in **pod.yaml**
-```
+```yaml
 containers:
   - name: somename
     ...
@@ -107,7 +107,7 @@ containers:
 ```
 
 for Single env
-```
+```yaml
 name: webapp-container
 ...
 env:
@@ -118,7 +118,7 @@ env:
       key: APP_COLOR
 ```
 for volume
-```
+```yaml
 volumes:
 - name: app-config-volume
   configMap:
@@ -132,7 +132,7 @@ volumes:
 - encoded
 
 to create (imperative)
-```
+```bash
 kubectl create secret generic <secret-name> --from-literal=<key>=<value></value>
 
 kubectl create secret generic app-secret --from-literal=DB_HOST=mysql
@@ -148,7 +148,7 @@ kubectl create secret generic app-secret --from-file=secret.properties
 ```
 
 secret.yaml
-```
+```yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -168,7 +168,7 @@ echo -n 'adjklaj==' | base64 -d
 ```
 
 Link to pod:
-```
+```yaml
 spec:
   containers:
   - name: webapp
@@ -179,7 +179,7 @@ spec:
 ```
 
 Single env
-```
+```yaml
 containers:
   - name: webapp
     ...
@@ -191,7 +191,7 @@ containers:
             key: DB_HOST
 ```
 Volume, -> The secrets would be created as a file with the key, and value as its file content.
-```
+```yaml
 containers:
 - name: webapp
   secret:
@@ -220,7 +220,7 @@ Usecase: while installing some other repo/dependencies for the app
 InitContainers run one by one in sequential order.
 Until all the initcontainers are successful the main container will not start. The pod keeps restarting.
 
-```
+```yaml
 spec:
   containers:
   ...

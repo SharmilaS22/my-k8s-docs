@@ -10,4 +10,3 @@ API groups
 kubectl proxy
 -> to access the apis without passing the creds all the time.\
 -> starts the proxy with certificates
-

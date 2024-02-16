@@ -2,7 +2,7 @@
 
 For a container we can provide CPU and memory required for it, so the scheduler will allocate the pod to a node with specified resource requirements available.
 
-```
+```yaml
 spec:
     containers:
       - name: webapp
@@ -22,7 +22,7 @@ memory 256Mi or 256M
 ## Resource usage limits:
 
 to limit using resources from the node.
-```
+```yaml
 spec:
     containers:
       - name: webapp
@@ -49,7 +49,7 @@ Having set requests and no limits, allow the pod to use up resources when they a
 LimitRange can be set to namespaces
 After this is applied, new pods are provided this limitRange of resources.
 
-```
+```yaml
 apiVersion: v1
 kind: LimitRange
 metadata:
@@ -69,7 +69,7 @@ spec:
 ---
 ## Resource Quota
 namespace level
-```
+```yaml
 apiVersion: v1
 kind: ResourceQuota
 metadata:

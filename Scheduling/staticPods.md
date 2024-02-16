@@ -36,13 +36,13 @@ The name of the static pod ends with node name as suffix
 To get info on kubelet or statis Pod path
 
 ssh into the node
-```
+```sh
 ssh <node-name>
  or
 ssh <node-ip>
 ```
 run
-```
+```sh
 systemctl cat kubelet
 ```
 - gives all info on kubelet including the kube-config file location

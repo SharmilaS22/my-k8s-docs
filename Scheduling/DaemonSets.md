@@ -11,7 +11,7 @@ usecases:
 
 Eg, kubeproxy is needed in every node, which could be achieved by Daemon sets
 
-```
+```yaml
 apiVersion: apps/v1
 kind: DaemonSet
 ...(like replica set)

@@ -40,8 +40,7 @@ kubectl taint nodes node1 app=redis:NoSchedule-
 ```
 
 To add tolerations to pods
-
-```
+```yaml
 spec:
     containers:
     tolerations:

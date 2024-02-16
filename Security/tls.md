@@ -82,7 +82,7 @@ openssl x509 -req -in admin.csr -CA ca.crt -CAkey ca.key -out admin.crt
 curl https://kube-apiserver:6443/api/v1/pods --key admin.key --cert admin.crt --cacert ca.crt
 
 kube-config.yaml
-```
+```yaml
 apiVersion: v1
 kind: Config
 clusters:
@@ -216,7 +216,7 @@ contexts:
 
 current-context: context_name
 
-```
+```sh
 kubectl config use-context <context-name>
 
 # with custom file

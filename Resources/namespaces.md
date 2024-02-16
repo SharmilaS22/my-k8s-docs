@@ -54,7 +54,7 @@ or
 kubectl get pods -A
 ```
 To assign a resource quota for a namespace:
-```
+```yaml
 apiVersion: v1
 kind: ResourceQuota
 metadata:
