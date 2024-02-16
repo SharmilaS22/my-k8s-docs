@@ -30,8 +30,14 @@ Docs:
 - [Rolling updates](AppLifecycle/Rollingupdates.md)
 
 ## Cluster Maintainance
-
+- [Backup](./ClusterMaintainance/backup.md)
+- [OS Upgrades](./ClusterMaintainance/OS_Upgrades.md)
 
 ## Security
-- [auth](./Security/auth.md)
+- [authentication](./Security/auth.md) 
 - [tls](./Security/tls.md)
+- [authorization](./Security/authorization.md)
+- [apiGroups](./Security/apiGroups.md)
+- [Service accounts](./Security/serviceAccounts.md)
+- [private registry images](./Security/privateImage.md)
+- [network Policy](./Security/networkpolicy.yaml)
