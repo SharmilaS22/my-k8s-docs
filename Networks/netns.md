@@ -13,11 +13,11 @@ The containers run in separate namespace and does not have visibility on network
 
 To display network interfaces in a particular namespace
 ```sh
-ip -n dev link 
+ip -n red link 
 
 #or
 
-ip netns exec dev ip link
+ip netns exec red ip link
 ip netns exec <ns-name> <commands..>
 ```
 
