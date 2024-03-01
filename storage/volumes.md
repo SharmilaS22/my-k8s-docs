@@ -17,8 +17,8 @@ spec:
       emptyDir: {} # exist for the lifetime of the pod
     - name: data-on-host
       hostPath: # on the node, lives even after pod goes down
-        path: /data
-        type: Directory
+        path: /data # does not survive on node outage
+        type: Directory # if pod is scheduled on another node - cant access this data
     - name: data-ebs # from the cloud
       awsElasticBlockStore: 
         volumeID: <vol-id-ebs>
