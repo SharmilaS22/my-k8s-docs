@@ -55,3 +55,6 @@ ip netns exec app-db ping 192.168.1.1 # db-ns' ip
 # The ip:mac mapping is added to arp table of both namespaces for the other one.
 
 ```
+
+`ip addr show <eth-name>` for viewing the ip ranges
+
