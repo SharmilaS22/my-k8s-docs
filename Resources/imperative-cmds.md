@@ -87,3 +87,13 @@ kubectl create service nodeport nginx --tcp:80:80 --nodeport=30001 --dry-run=cli
 Declarative command
 `kubectl apply`
 Detects changes and updates the resource / creates if not created already
+
+---
+
+To create ingress
+
+```sh
+kubectl create ingress <ingress-name> --rule="host/path=service:port"
+
+kubectl create ingress ingress-test --rule="wear.my-online-store.com/wear*=wear-service:80"
+```
