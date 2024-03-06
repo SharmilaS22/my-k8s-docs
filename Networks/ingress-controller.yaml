@@ -53,3 +53,5 @@ spec:
           ports:
             - containerPort: 80
               protocol: TCP
+
+# Would provide args and POD_NAME and POD_NAMESPACE as env from metadata

@@ -8,7 +8,7 @@ Network model
 The kubelet will have information on which CNI plugin to use.
 The cni bin and cni config are added to the kubelet service when it starts
 
-
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/troubleshooting-kubeadm/#default-nic-when-using-flannel-as-the-pod-network-in-vagrant
 
 Weave
 ```sh
